@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'rooms/show'
   devise_for :users
-  mount ActionCable.server => '/cable'
+
+  root 'rooms#index'
+  resources :rooms, only: %i[new show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,9 @@
+<div>
+  <p><% current_user.id %></p>
+  <ul>
+    <% @rooms.each do |room| %>
+      <li><%= link_to "Room#{room.id}", room_path(room) %></li>
+    <% end %>
+  </ul>
+  <li><%= link_to 'NEW ROOM' , new_room_path %></li>
+</div>

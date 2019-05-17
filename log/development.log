@@ -724,3 +724,1914 @@ RoomChannel#speak({"message"=>"moonlight"})
 [ActiveJob] [MessageBroadcastJob] [2dff1f9b-60af-467e-bd95-e301a0eaec7f] [ActionCable] Broadcasting to room_channel: {:message=>"<div class=\"messages\">\n  <p>moonlight</p>\n</div>"}
 [ActiveJob] [MessageBroadcastJob] [2dff1f9b-60af-467e-bd95-e301a0eaec7f] Performed MessageBroadcastJob (Job ID: 2dff1f9b-60af-467e-bd95-e301a0eaec7f) from Async(default) in 23.51ms
 RoomChannel transmitting {"message"=>"<div class=\"messages\">\n  <p>moonlight</p>\n</div>"} (via streamed from room_channel)
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (6.3ms)[0m  [1m[34mSELECT GET_LOCK('8807287657078091370', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateRooms (20190517100800)
+  [1m[35m (98.5ms)[0m  [1m[35mCREATE TABLE `rooms` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190517100800_create_rooms.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (10.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190517100800')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddColumnsToMessages (20190517101433)
+  [1m[35m (67.2ms)[0m  [1m[35mALTER TABLE `messages` ADD `user_id` bigint[0m
+  ↳ db/migrate/20190517101433_add_columns_to_messages.rb:3
+  [1m[35m (21.0ms)[0m  [1m[35mCREATE  INDEX `index_messages_on_user_id`  ON `messages` (`user_id`) [0m
+  ↳ db/migrate/20190517101433_add_columns_to_messages.rb:3
+  [1m[35m (68.7ms)[0m  [1m[35mALTER TABLE `messages` ADD CONSTRAINT `fk_rails_273a25a7a6`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  ↳ db/migrate/20190517101433_add_columns_to_messages.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE `messages` ADD `room` referencese[0m
+  ↳ db/migrate/20190517101433_add_columns_to_messages.rb:4
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK('8807287657078091370')[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('8807287657078091370', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to AddColumnsToMessages (20190517101433)
+  [1m[35m (7.5ms)[0m  [1m[35mALTER TABLE `messages` ADD `user_id` bigint[0m
+  ↳ db/migrate/20190517101433_add_columns_to_messages.rb:3
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('8807287657078091370')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('8807287657078091370', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to AddColumnsToMessages (20190517101433)
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE `messages` ADD `user_id` bigint[0m
+  ↳ db/migrate/20190517101433_add_columns_to_messages.rb:3
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('8807287657078091370')[0m
+  ↳ bin/rails:9
+  [1m[35m (3.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('8807287657078091370', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to AddColumnsToMessages (20190517101433)
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE `messages` ADD `user_id` bigint[0m
+  ↳ db/migrate/20190517101433_add_columns_to_messages.rb:3
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('8807287657078091370')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('8807287657078091370', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to AddColumnsToMessages (20190517101433)
+  [1m[35m (98.0ms)[0m  [1m[35mALTER TABLE `messages` ADD `room_id` bigint[0m
+  ↳ db/migrate/20190517101433_add_columns_to_messages.rb:4
+  [1m[35m (39.7ms)[0m  [1m[35mCREATE  INDEX `index_messages_on_room_id`  ON `messages` (`room_id`) [0m
+  ↳ db/migrate/20190517101433_add_columns_to_messages.rb:4
+  [1m[35m (38.4ms)[0m  [1m[35mALTER TABLE `messages` ADD CONSTRAINT `fk_rails_a8db0fb63a`
+FOREIGN KEY (`room_id`)
+  REFERENCES `rooms` (`id`)
+[0m
+  ↳ db/migrate/20190517101433_add_columns_to_messages.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190517101433')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (4.5ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('8807287657078091370')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Started GET "/rooms/show" for ::1 at 2019-05-17 20:02:49 +0900
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 0 LIMIT 1[0m
+  ↳ app/controllers/rooms_controller.rb:8
+Completed 404 Not Found in 75ms (ActiveRecord: 44.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Room with 'id'=show):
+  
+app/controllers/rooms_controller.rb:8:in `show'
+Started GET "/" for ::1 at 2019-05-17 20:02:57 +0900
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` ORDER BY `rooms`.`id` ASC[0m
+  ↳ app/views/rooms/index.html.erb:3
+  Rendered rooms/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 57ms (Views: 52.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/cable" for ::1 at 2019-05-17 20:02:57 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 20:02:57 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-17 20:17:34 +0900
+RoomChannel stopped streaming from room_channel
+Started GET "/cable" for ::1 at 2019-05-17 20:17:35 +0900
+  [1m[35m (12.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 20:17:36 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+Started GET "/" for ::1 at 2019-05-17 20:31:03 +0900
+  [1m[35m (1.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` ORDER BY `rooms`.`id` ASC[0m
+  ↳ app/views/rooms/index.html.erb:3
+  Rendered rooms/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 509ms (Views: 462.7ms | ActiveRecord: 22.9ms)
+
+
+Started GET "/cable" for ::1 at 2019-05-17 20:31:04 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 20:31:04 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"RoomChannel\"}"}) [SyntaxError - /Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL
+    Message.create! (content: data['message'], user_id: cu...
+                     ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...tent: data['message'], user_id: current_user.id, room_id: pa...
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...r_id: current_user.id, room_id: params['room_id'])
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected ')', expecting keyword_end
+...id, room_id: params['room_id'])
+...                              ^]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:476:in `block in load_file' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:661:in `new_constants_in' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:475:in `load_file'
+Started GET "/" for ::1 at 2019-05-17 20:32:10 +0900
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` ORDER BY `rooms`.`id` ASC[0m
+  ↳ app/views/rooms/index.html.erb:3
+  Rendered rooms/index.html.erb within layouts/application (734.1ms)
+Completed 500 Internal Server Error in 745ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_room_path' for #<#<Class:0x00007fb3a567b5f0>:0x00007fb3a3cedde0>
+Did you mean?  new_session_path):
+    4:       <li><%= link_to "Room#{room.id}", room_path(room) %></li>
+    5:     <% end %>
+    6:   </ul>
+    7:   <li><%= link_to 'NEW ROOM' , new_room_path %></li>
+    8: </div>
+  
+app/views/rooms/index.html.erb:7:in `_app_views_rooms_index_html_erb__1827927996828161510_70204762059780'
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-17 20:32:12 +0900
+Started GET "/" for ::1 at 2019-05-17 20:32:57 +0900
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` ORDER BY `rooms`.`id` ASC[0m
+  ↳ app/views/rooms/index.html.erb:3
+  Rendered rooms/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 184ms (Views: 28.3ms | ActiveRecord: 138.5ms)
+
+
+Started GET "/cable" for ::1 at 2019-05-17 20:32:58 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 20:32:58 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"RoomChannel\"}"}) [SyntaxError - /Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL
+    Message.create! (content: data['message'], user_id: cu...
+                     ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...tent: data['message'], user_id: current_user.id, room_id: pa...
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...r_id: current_user.id, room_id: params['room_id'])
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected ')', expecting keyword_end
+...id, room_id: params['room_id'])
+...                              ^]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:476:in `block in load_file' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:661:in `new_constants_in' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:475:in `load_file'
+Started GET "/rooms/new" for ::1 at 2019-05-17 20:32:59 +0900
+  
+AbstractController::ActionNotFound (The action 'new' could not be found for RoomsController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/rooms/new" for ::1 at 2019-05-17 20:34:57 +0900
+Processing by RoomsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (20.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/rooms_controller.rb:9
+  [1m[36mRoom Create (16.8ms)[0m  [1m[32mINSERT INTO `rooms` (`created_at`, `updated_at`) VALUES ('2019-05-17 11:34:58', '2019-05-17 11:34:58')[0m
+  ↳ app/controllers/rooms_controller.rb:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/rooms_controller.rb:9
+Redirected to http://localhost:3000/
+Completed 302 Found in 287ms (ActiveRecord: 268.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-17 20:34:58 +0900
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` ORDER BY `rooms`.`id` ASC[0m
+  ↳ app/views/rooms/index.html.erb:3
+  Rendered rooms/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 31ms (Views: 26.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cable" for ::1 at 2019-05-17 20:34:58 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 20:34:58 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"RoomChannel\"}"}) [SyntaxError - /Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL
+    Message.create! (content: data['message'], user_id: cu...
+                     ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...tent: data['message'], user_id: current_user.id, room_id: pa...
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...r_id: current_user.id, room_id: params['room_id'])
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected ')', expecting keyword_end
+...id, room_id: params['room_id'])
+...                              ^]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:476:in `block in load_file' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:661:in `new_constants_in' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:475:in `load_file'
+Started GET "/rooms/1" for ::1 at 2019-05-17 20:34:59 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/rooms_controller.rb:14
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (8.0ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 1[0m
+  ↳ app/views/rooms/show.html.erb:2
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered rooms/show.html.erb within layouts/application (28.8ms)
+Completed 200 OK in 90ms (Views: 36.8ms | ActiveRecord: 17.7ms)
+
+
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"RoomChannel\",\"room_id\":1}"}) [SyntaxError - /Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL
+    Message.create! (content: data['message'], user_id: cu...
+                     ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...tent: data['message'], user_id: current_user.id, room_id: pa...
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...r_id: current_user.id, room_id: params['room_id'])
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected ')', expecting keyword_end
+...id, room_id: params['room_id'])
+...                              ^]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:476:in `block in load_file' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:661:in `new_constants_in' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:475:in `load_file'
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"RoomChannel\"}"}) [SyntaxError - /Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL
+    Message.create! (content: data['message'], user_id: cu...
+                     ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...tent: data['message'], user_id: current_user.id, room_id: pa...
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...r_id: current_user.id, room_id: params['room_id'])
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected ')', expecting keyword_end
+...id, room_id: params['room_id'])
+...                              ^]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:476:in `block in load_file' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:661:in `new_constants_in' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:475:in `load_file'
+Started GET "/rooms/new" for ::1 at 2019-05-17 20:35:14 +0900
+Processing by RoomsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/rooms_controller.rb:9
+  [1m[36mRoom Create (10.8ms)[0m  [1m[32mINSERT INTO `rooms` (`created_at`, `updated_at`) VALUES ('2019-05-17 11:35:14', '2019-05-17 11:35:14')[0m
+  ↳ app/controllers/rooms_controller.rb:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/rooms_controller.rb:9
+Redirected to http://localhost:3000/
+Completed 302 Found in 17ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/" for ::1 at 2019-05-17 20:35:14 +0900
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` ORDER BY `rooms`.`id` ASC[0m
+  ↳ app/views/rooms/index.html.erb:3
+  Rendered rooms/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 41ms (Views: 36.5ms | ActiveRecord: 0.8ms)
+
+
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"RoomChannel\"}"}) [SyntaxError - /Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL
+    Message.create! (content: data['message'], user_id: cu...
+                     ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...tent: data['message'], user_id: current_user.id, room_id: pa...
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...r_id: current_user.id, room_id: params['room_id'])
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected ')', expecting keyword_end
+...id, room_id: params['room_id'])
+...                              ^]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:476:in `block in load_file' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:661:in `new_constants_in' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:475:in `load_file'
+Started GET "/rooms/2" for ::1 at 2019-05-17 20:35:15 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/rooms_controller.rb:14
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 2[0m
+  ↳ app/views/rooms/show.html.erb:2
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered rooms/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 32ms (Views: 25.1ms | ActiveRecord: 0.9ms)
+
+
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"RoomChannel\",\"room_id\":2}"}) [SyntaxError - /Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL
+    Message.create! (content: data['message'], user_id: cu...
+                     ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...tent: data['message'], user_id: current_user.id, room_id: pa...
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...r_id: current_user.id, room_id: params['room_id'])
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected ')', expecting keyword_end
+...id, room_id: params['room_id'])
+...                              ^]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:476:in `block in load_file' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:661:in `new_constants_in' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:475:in `load_file'
+Started GET "/cable" for ::1 at 2019-05-17 20:35:19 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 20:35:19 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"RoomChannel\",\"room_id\":2}"}) [SyntaxError - /Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL
+    Message.create! (content: data['message'], user_id: cu...
+                     ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...tent: data['message'], user_id: current_user.id, room_id: pa...
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...r_id: current_user.id, room_id: params['room_id'])
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected ')', expecting keyword_end
+...id, room_id: params['room_id'])
+...                              ^]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:476:in `block in load_file' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:661:in `new_constants_in' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:475:in `load_file'
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-17 20:35:30 +0900
+Started GET "/cable" for ::1 at 2019-05-17 20:35:32 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 20:35:32 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"RoomChannel\",\"room_id\":2}"}) [SyntaxError - /Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL
+    Message.create! (content: data['message'], user_id: cu...
+                     ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...tent: data['message'], user_id: current_user.id, room_id: pa...
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...r_id: current_user.id, room_id: params['room_id'])
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected ')', expecting keyword_end
+...id, room_id: params['room_id'])
+...                              ^]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:476:in `block in load_file' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:661:in `new_constants_in' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:475:in `load_file'
+Started GET "/cable" for ::1 at 2019-05-17 20:35:34 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 20:35:34 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"RoomChannel\",\"room_id\":2}"}) [SyntaxError - /Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL
+    Message.create! (content: data['message'], user_id: cu...
+                     ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...tent: data['message'], user_id: current_user.id, room_id: pa...
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...r_id: current_user.id, room_id: params['room_id'])
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected ')', expecting keyword_end
+...id, room_id: params['room_id'])
+...                              ^]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:476:in `block in load_file' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:661:in `new_constants_in' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:475:in `load_file'
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\",\"room_id\":2}", "data"=>"{\"message\":\"test\",\"action\":\"speak\"}"}) [RuntimeError - Unable to find subscription with identifier: {"channel":"RoomChannel","room_id":2}]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/connection/subscriptions.rb:78:in `find' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/connection/subscriptions.rb:55:in `perform_action' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/connection/subscriptions.rb:19:in `execute_command' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/connection/base.rb:87:in `dispatch_websocket_message' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/server/worker.rb:60:in `block in invoke'
+Started GET "/" for ::1 at 2019-05-17 20:43:11 +0900
+  [1m[35m (1.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` ORDER BY `rooms`.`id` ASC[0m
+  ↳ app/views/rooms/index.html.erb:3
+  Rendered rooms/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 62ms (Views: 49.4ms | ActiveRecord: 1.7ms)
+
+
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"RoomChannel\"}"}) [SyntaxError - /Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL
+    Message.create! (content: data['message'], user_id: cu...
+                     ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...tent: data['message'], user_id: current_user.id, room_id: pa...
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...r_id: current_user.id, room_id: params['room_id'])
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected ')', expecting keyword_end
+...id, room_id: params['room_id'])
+...                              ^]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:476:in `block in load_file' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:661:in `new_constants_in' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:475:in `load_file'
+Started GET "/" for ::1 at 2019-05-17 20:43:47 +0900
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` ORDER BY `rooms`.`id` ASC[0m
+  ↳ app/views/rooms/index.html.erb:3
+  Rendered rooms/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 36ms (Views: 30.8ms | ActiveRecord: 0.7ms)
+
+
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"RoomChannel\"}"}) [SyntaxError - /Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL
+    Message.create! (content: data['message'], user_id: cu...
+                     ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...tent: data['message'], user_id: current_user.id, room_id: pa...
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...r_id: current_user.id, room_id: params['room_id'])
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected ')', expecting keyword_end
+...id, room_id: params['room_id'])
+...                              ^]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:476:in `block in load_file' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:661:in `new_constants_in' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:475:in `load_file'
+Started GET "/" for ::1 at 2019-05-17 20:44:39 +0900
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` ORDER BY `rooms`.`id` ASC[0m
+  ↳ app/views/rooms/index.html.erb:4
+  Rendered rooms/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 33ms (Views: 28.6ms | ActiveRecord: 0.6ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-17 20:44:39 +0900
+Started GET "/cable" for ::1 at 2019-05-17 20:44:39 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 20:44:39 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"RoomChannel\"}"}) [SyntaxError - /Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL
+    Message.create! (content: data['message'], user_id: cu...
+                     ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...tent: data['message'], user_id: current_user.id, room_id: pa...
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...r_id: current_user.id, room_id: params['room_id'])
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected ')', expecting keyword_end
+...id, room_id: params['room_id'])
+...                              ^]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:476:in `block in load_file' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:661:in `new_constants_in' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:475:in `load_file'
+Started GET "/login" for ::1 at 2019-05-17 20:44:54 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-05-17 20:44:59 +0900
+  [1m[35m (1.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` ORDER BY `rooms`.`id` ASC[0m
+  ↳ app/views/rooms/index.html.erb:4
+  Rendered rooms/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 37ms (Views: 32.6ms | ActiveRecord: 0.6ms)
+
+
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"RoomChannel\"}"}) [SyntaxError - /Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL
+    Message.create! (content: data['message'], user_id: cu...
+                     ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...tent: data['message'], user_id: current_user.id, room_id: pa...
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...r_id: current_user.id, room_id: params['room_id'])
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected ')', expecting keyword_end
+...id, room_id: params['room_id'])
+...                              ^]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:476:in `block in load_file' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:661:in `new_constants_in' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:475:in `load_file'
+Started GET "/users/sign_in" for ::1 at 2019-05-17 20:45:14 +0900
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-05-17 20:45:14 +0900
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` ORDER BY `rooms`.`id` ASC[0m
+  ↳ app/views/rooms/index.html.erb:4
+  Rendered rooms/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 61ms (Views: 56.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/cable" for ::1 at 2019-05-17 20:45:14 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 20:45:14 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"RoomChannel\"}"}) [SyntaxError - /Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL
+    Message.create! (content: data['message'], user_id: cu...
+                     ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...tent: data['message'], user_id: current_user.id, room_id: pa...
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...r_id: current_user.id, room_id: params['room_id'])
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected ')', expecting keyword_end
+...id, room_id: params['room_id'])
+...                              ^]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:476:in `block in load_file' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:661:in `new_constants_in' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:475:in `load_file'
+Started GET "/rooms/1" for ::1 at 2019-05-17 20:45:19 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/rooms_controller.rb:14
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (3.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 1[0m
+  ↳ app/views/rooms/show.html.erb:2
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered rooms/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 48ms (Views: 38.4ms | ActiveRecord: 4.2ms)
+
+
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"RoomChannel\",\"room_id\":1}"}) [SyntaxError - /Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL
+    Message.create! (content: data['message'], user_id: cu...
+                     ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...tent: data['message'], user_id: current_user.id, room_id: pa...
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...r_id: current_user.id, room_id: params['room_id'])
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected ')', expecting keyword_end
+...id, room_id: params['room_id'])
+...                              ^]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:476:in `block in load_file' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:661:in `new_constants_in' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:475:in `load_file'
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\",\"room_id\":1}", "data"=>"{\"message\":\"test\",\"action\":\"speak\"}"}) [RuntimeError - Unable to find subscription with identifier: {"channel":"RoomChannel","room_id":1}]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/connection/subscriptions.rb:78:in `find' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/connection/subscriptions.rb:55:in `perform_action' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/connection/subscriptions.rb:19:in `execute_command' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/connection/base.rb:87:in `dispatch_websocket_message' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/server/worker.rb:60:in `block in invoke'
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\",\"room_id\":1}", "data"=>"{\"message\":\"\",\"action\":\"speak\"}"}) [RuntimeError - Unable to find subscription with identifier: {"channel":"RoomChannel","room_id":1}]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/connection/subscriptions.rb:78:in `find' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/connection/subscriptions.rb:55:in `perform_action' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/connection/subscriptions.rb:19:in `execute_command' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/connection/base.rb:87:in `dispatch_websocket_message' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/server/worker.rb:60:in `block in invoke'
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"RoomChannel\"}"}) [SyntaxError - /Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL
+    Message.create! (content: data['message'], user_id: cu...
+                     ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...tent: data['message'], user_id: current_user.id, room_id: pa...
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected tLABEL, expecting '='
+...r_id: current_user.id, room_id: params['room_id'])
+...                       ^~~~~~~~
+/Users/takahiro/projects/chat/app/channels/room_channel.rb:12: syntax error, unexpected ')', expecting keyword_end
+...id, room_id: params['room_id'])
+...                              ^]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:54:in `load' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:476:in `block in load_file' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:661:in `new_constants_in' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:475:in `load_file'
+Started GET "/rooms/1" for ::1 at 2019-05-17 20:47:30 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/rooms_controller.rb:14
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 1[0m
+  ↳ app/views/rooms/show.html.erb:2
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered rooms/show.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 74ms (Views: 22.1ms | ActiveRecord: 29.8ms)
+
+
+Started GET "/cable" for ::1 at 2019-05-17 20:47:31 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 20:47:31 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_1
+RoomChannel#speak({"message"=>"test"})
+RoomChannel#speak({"message"=>""})
+RoomChannel#speak({"message"=>""})
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/channels/room_channel.rb:12
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\",\"room_id\":1}", "data"=>"{\"message\":\"\",\"action\":\"speak\"}"}) [ActiveRecord::RecordInvalid - Validation failed: Content can't be blank]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:80:in `raise_validation_error' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:52:in `save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:315:in `block in save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:387:in `block in with_transaction_returning_status' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `block in transaction'
+  [1m[35m (5.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mMessage Create (7.9ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `created_at`, `updated_at`, `user_id`, `room_id`) VALUES ('test', '2019-05-17 11:47:32', '2019-05-17 11:47:32', 1, 1)[0m
+  ↳ app/channels/room_channel.rb:12
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/channels/room_channel.rb:12
+  ↳ app/channels/room_channel.rb:12
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\",\"room_id\":1}", "data"=>"{\"message\":\"\",\"action\":\"speak\"}"}) [ActiveRecord::RecordInvalid - Validation failed: Content can't be blank]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:80:in `raise_validation_error' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:52:in `save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:315:in `block in save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:387:in `block in with_transaction_returning_status' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `block in transaction'
+[ActiveJob] Enqueued MessageBroadcastJob (Job ID: de533412-a806-4db7-9b85-cf46b9275865) to Async(default) with arguments: #<GlobalID:0x00007fb3aae31f60 @uri=#<URI::GID gid://chat/Message/5>>
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 5 LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [MessageBroadcastJob] [de533412-a806-4db7-9b85-cf46b9275865] Performing MessageBroadcastJob (Job ID: de533412-a806-4db7-9b85-cf46b9275865) from Async(default) with arguments: #<GlobalID:0x00007fb3abb3bcd8 @uri=#<URI::GID gid://chat/Message/5>>
+[ActiveJob] [MessageBroadcastJob] [de533412-a806-4db7-9b85-cf46b9275865]   Rendered messages/_message.html.erb (22.3ms)
+[ActiveJob] [MessageBroadcastJob] [de533412-a806-4db7-9b85-cf46b9275865] Error performing MessageBroadcastJob (Job ID: de533412-a806-4db7-9b85-cf46b9275865) from Async(default) in 44.6ms: ActionView::Template::Error (undefined method `user' for #<Message:0x00007fb3abb35900>
+Did you mean?  user_id):
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activemodel-5.2.3/lib/active_model/attribute_methods.rb:430:in `method_missing'
+/Users/takahiro/projects/chat/app/views/messages/_message.html.erb:2:in `_app_views_messages__message_html_erb__1059904353022723106_70204828286060'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/template.rb:159:in `block in render'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:170:in `instrument'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/template.rb:354:in `instrument_render_template'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/template.rb:157:in `render'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/renderer/partial_renderer.rb:344:in `block in render_partial'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/renderer/abstract_renderer.rb:44:in `block in instrument'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:168:in `block in instrument'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:168:in `instrument'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/renderer/abstract_renderer.rb:43:in `instrument'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/renderer/partial_renderer.rb:333:in `render_partial'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/renderer/partial_renderer.rb:312:in `render'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/renderer/renderer.rb:49:in `render_partial'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/renderer/renderer.rb:23:in `render'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/rendering.rb:103:in `_render_template'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/streaming.rb:219:in `_render_template'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/rendering.rb:84:in `render_to_body'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/abstract_controller/rendering.rb:46:in `render_to_string'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/rendering.rb:41:in `render_to_string'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/renderer.rb:83:in `render'
+/Users/takahiro/projects/chat/app/jobs/message_broadcast_job.rb:12:in `render_message'
+/Users/takahiro/projects/chat/app/jobs/message_broadcast_job.rb:5:in `perform'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/execution.rb:39:in `block in perform_now'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/i18n-1.6.0/lib/i18n.rb:297:in `with_locale'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/logging.rb:26:in `block (4 levels) in <module:Logging>'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:168:in `block in instrument'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:168:in `instrument'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/logging.rb:25:in `block (3 levels) in <module:Logging>'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/logging.rb:46:in `block in tag_logger'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:28:in `tagged'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `tagged'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/logging.rb:46:in `tag_logger'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/logging.rb:22:in `block (2 levels) in <module:Logging>'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/execution.rb:38:in `perform_now'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/execution.rb:24:in `block in execute'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/railtie.rb:28:in `block (4 levels) in <class:Railtie>'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/execution_wrapper.rb:87:in `wrap'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/reloader.rb:73:in `block in wrap'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/execution_wrapper.rb:87:in `wrap'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/reloader.rb:72:in `wrap'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/railtie.rb:27:in `block (3 levels) in <class:Railtie>'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/execution.rb:22:in `execute'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Started GET "/cable" for ::1 at 2019-05-17 20:47:37 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 20:47:37 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_1
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_2
+Started GET "/cable" for ::1 at 2019-05-17 20:47:37 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 20:47:37 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_2
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_
+Started GET "/cable" for ::1 at 2019-05-17 20:47:38 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 20:47:38 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_1
+RoomChannel#speak({"message"=>"say"})
+RoomChannel#speak({"message"=>""})
+RoomChannel#speak({"message"=>""})
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (1.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[36mMessage Create (1.7ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `created_at`, `updated_at`, `user_id`, `room_id`) VALUES ('say', '2019-05-17 11:47:50', '2019-05-17 11:47:50', 1, 1)[0m
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\",\"room_id\":1}", "data"=>"{\"message\":\"\",\"action\":\"speak\"}"}) [ActiveRecord::RecordInvalid - Validation failed: Content can't be blank]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:80:in `raise_validation_error' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:52:in `save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:315:in `block in save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:387:in `block in with_transaction_returning_status' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `block in transaction'
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\",\"room_id\":1}", "data"=>"{\"message\":\"\",\"action\":\"speak\"}"}) [ActiveRecord::RecordInvalid - Validation failed: Content can't be blank]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:80:in `raise_validation_error' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:52:in `save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:315:in `block in save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:387:in `block in with_transaction_returning_status' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `block in transaction'
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/channels/room_channel.rb:12
+[ActiveJob] Enqueued MessageBroadcastJob (Job ID: d3498f10-5766-4d04-9acf-19a553141175) to Async(default) with arguments: #<GlobalID:0x00007fb3aae67250 @uri=#<URI::GID gid://chat/Message/6>>
+  [1m[36mMessage Load (0.9ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 6 LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [MessageBroadcastJob] [d3498f10-5766-4d04-9acf-19a553141175] Performing MessageBroadcastJob (Job ID: d3498f10-5766-4d04-9acf-19a553141175) from Async(default) with arguments: #<GlobalID:0x00007fb3aae6ca70 @uri=#<URI::GID gid://chat/Message/6>>
+[ActiveJob] [MessageBroadcastJob] [d3498f10-5766-4d04-9acf-19a553141175]   Rendered messages/_message.html.erb (20.2ms)
+[ActiveJob] [MessageBroadcastJob] [d3498f10-5766-4d04-9acf-19a553141175] Error performing MessageBroadcastJob (Job ID: d3498f10-5766-4d04-9acf-19a553141175) from Async(default) in 40.48ms: ActionView::Template::Error (undefined method `user' for #<Message:0x00007fb3aae6e780>
+Did you mean?  user_id):
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activemodel-5.2.3/lib/active_model/attribute_methods.rb:430:in `method_missing'
+/Users/takahiro/projects/chat/app/views/messages/_message.html.erb:2:in `_app_views_messages__message_html_erb__1059904353022723106_70204784832260'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/template.rb:159:in `block in render'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:170:in `instrument'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/template.rb:354:in `instrument_render_template'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/template.rb:157:in `render'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/renderer/partial_renderer.rb:344:in `block in render_partial'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/renderer/abstract_renderer.rb:44:in `block in instrument'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:168:in `block in instrument'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:168:in `instrument'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/renderer/abstract_renderer.rb:43:in `instrument'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/renderer/partial_renderer.rb:333:in `render_partial'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/renderer/partial_renderer.rb:312:in `render'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/renderer/renderer.rb:49:in `render_partial'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/renderer/renderer.rb:23:in `render'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/rendering.rb:103:in `_render_template'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/streaming.rb:219:in `_render_template'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/rendering.rb:84:in `render_to_body'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/abstract_controller/rendering.rb:46:in `render_to_string'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/rendering.rb:41:in `render_to_string'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/renderer.rb:83:in `render'
+/Users/takahiro/projects/chat/app/jobs/message_broadcast_job.rb:12:in `render_message'
+/Users/takahiro/projects/chat/app/jobs/message_broadcast_job.rb:5:in `perform'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/execution.rb:39:in `block in perform_now'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/i18n-1.6.0/lib/i18n.rb:297:in `with_locale'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/logging.rb:26:in `block (4 levels) in <module:Logging>'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:168:in `block in instrument'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:168:in `instrument'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/logging.rb:25:in `block (3 levels) in <module:Logging>'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/logging.rb:46:in `block in tag_logger'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:28:in `tagged'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `tagged'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/logging.rb:46:in `tag_logger'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/logging.rb:22:in `block (2 levels) in <module:Logging>'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/execution.rb:38:in `perform_now'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/execution.rb:24:in `block in execute'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/railtie.rb:28:in `block (4 levels) in <class:Railtie>'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/execution_wrapper.rb:87:in `wrap'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/reloader.rb:73:in `block in wrap'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/execution_wrapper.rb:87:in `wrap'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/reloader.rb:72:in `wrap'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/railtie.rb:27:in `block (3 levels) in <class:Railtie>'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/execution.rb:22:in `execute'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-17 20:47:55 +0900
+RoomChannel stopped streaming from room_channel_
+RoomChannel stopped streaming from room_channel_1
+Started GET "/cable" for ::1 at 2019-05-17 20:47:55 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 20:47:55 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_
+Started GET "/rooms/1" for ::1 at 2019-05-17 21:01:03 +0900
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/rooms_controller.rb:14
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (2.6ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 1[0m
+  ↳ app/views/rooms/show.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  Rendered collection of messages/_message.html.erb [2 times] (5.4ms)
+  Rendered rooms/show.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 135ms (Views: 61.0ms | ActiveRecord: 29.7ms)
+
+
+Started GET "/cable" for ::1 at 2019-05-17 21:01:03 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 21:01:03 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_1
+Started GET "/cable" for ::1 at 2019-05-17 21:01:12 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 21:01:12 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_1
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_
+Started GET "/cable" for ::1 at 2019-05-17 21:01:12 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 21:01:12 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_2
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_
+Started GET "/cable" for ::1 at 2019-05-17 21:01:12 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 21:01:12 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_1
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_2
+Started GET "/rooms/1" for ::1 at 2019-05-17 21:01:19 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/rooms_controller.rb:14
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 1[0m
+  ↳ app/views/rooms/show.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  Rendered collection of messages/_message.html.erb [2 times] (2.1ms)
+  Rendered rooms/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 39ms (Views: 30.5ms | ActiveRecord: 1.8ms)
+
+
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_1
+RoomChannel#speak({"message"=>"aaa"})
+RoomChannel#speak({"message"=>""})
+RoomChannel#speak({"message"=>""})
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[36mMessage Create (4.0ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `created_at`, `updated_at`, `user_id`, `room_id`) VALUES ('aaa', '2019-05-17 12:01:33', '2019-05-17 12:01:33', 1, 1)[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/channels/room_channel.rb:12
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\",\"room_id\":1}", "data"=>"{\"message\":\"\",\"action\":\"speak\"}"}) [ActiveRecord::RecordInvalid - Validation failed: Content can't be blank]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:80:in `raise_validation_error' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:52:in `save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:315:in `block in save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:387:in `block in with_transaction_returning_status' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `block in transaction'
+  [1m[35m (0.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ app/channels/room_channel.rb:12
+[ActiveJob] Enqueued MessageBroadcastJob (Job ID: e1ca9e9b-f16c-4112-b043-5c801c0bd882) to Async(default) with arguments: #<GlobalID:0x00007fb3a3f0fe48 @uri=#<URI::GID gid://chat/Message/7>>
+  [1m[35m (2.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[36mMessage Load (1.1ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 7 LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[ActiveJob] [MessageBroadcastJob] [e1ca9e9b-f16c-4112-b043-5c801c0bd882] Performing MessageBroadcastJob (Job ID: e1ca9e9b-f16c-4112-b043-5c801c0bd882) from Async(default) with arguments: #<GlobalID:0x00007fb3a970d500 @uri=#<URI::GID gid://chat/Message/7>>
+  ↳ app/channels/room_channel.rb:12
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\",\"room_id\":1}", "data"=>"{\"message\":\"\",\"action\":\"speak\"}"}) [ActiveRecord::RecordInvalid - Validation failed: Content can't be blank]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:80:in `raise_validation_error' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:52:in `save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:315:in `block in save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:387:in `block in with_transaction_returning_status' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `block in transaction'
+[ActiveJob] [MessageBroadcastJob] [e1ca9e9b-f16c-4112-b043-5c801c0bd882]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [e1ca9e9b-f16c-4112-b043-5c801c0bd882]   ↳ app/views/messages/_message.html.erb:2
+[ActiveJob] [MessageBroadcastJob] [e1ca9e9b-f16c-4112-b043-5c801c0bd882]   Rendered messages/_message.html.erb (1.7ms)
+[ActiveJob] [MessageBroadcastJob] [e1ca9e9b-f16c-4112-b043-5c801c0bd882] [ActionCable] Broadcasting to room_channel: {:message=>"<div class=\"message\">\n  <p>test@gmail.com: aaa</p>\n</div>"}
+[ActiveJob] [MessageBroadcastJob] [e1ca9e9b-f16c-4112-b043-5c801c0bd882] Performed MessageBroadcastJob (Job ID: e1ca9e9b-f16c-4112-b043-5c801c0bd882) from Async(default) in 21.58ms
+Started GET "/rooms/1" for ::1 at 2019-05-17 21:01:58 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/rooms_controller.rb:14
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 1[0m
+  ↳ app/views/rooms/show.html.erb:2
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  Rendered collection of messages/_message.html.erb [3 times] (3.2ms)
+  Rendered rooms/show.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 47ms (Views: 37.8ms | ActiveRecord: 4.1ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-17 21:01:58 +0900
+RoomChannel stopped streaming from room_channel_2
+RoomChannel stopped streaming from room_channel_
+RoomChannel stopped streaming from room_channel_1
+Started GET "/cable" for ::1 at 2019-05-17 21:01:58 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 21:01:58 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_1
+RoomChannel#speak({"message"=>"sucsess"})
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[36mMessage Create (3.3ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `created_at`, `updated_at`, `user_id`, `room_id`) VALUES ('sucsess', '2019-05-17 12:03:23', '2019-05-17 12:03:23', 1, 1)[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/channels/room_channel.rb:12
+[ActiveJob] Enqueued MessageBroadcastJob (Job ID: 9f634e80-b6cd-40b3-bc2c-5db7fcffb390) to Async(default) with arguments: #<GlobalID:0x00007fb3aadda468 @uri=#<URI::GID gid://chat/Message/8>>
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 8 LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [MessageBroadcastJob] [9f634e80-b6cd-40b3-bc2c-5db7fcffb390] Performing MessageBroadcastJob (Job ID: 9f634e80-b6cd-40b3-bc2c-5db7fcffb390) from Async(default) with arguments: #<GlobalID:0x00007fb3aadc6ad0 @uri=#<URI::GID gid://chat/Message/8>>
+[ActiveJob] [MessageBroadcastJob] [9f634e80-b6cd-40b3-bc2c-5db7fcffb390]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [9f634e80-b6cd-40b3-bc2c-5db7fcffb390]   ↳ app/views/messages/_message.html.erb:2
+[ActiveJob] [MessageBroadcastJob] [9f634e80-b6cd-40b3-bc2c-5db7fcffb390]   Rendered messages/_message.html.erb (2.0ms)
+[ActiveJob] [MessageBroadcastJob] [9f634e80-b6cd-40b3-bc2c-5db7fcffb390] [ActionCable] Broadcasting to room_channel: {:message=>"<div class=\"message\">\n  <p>test@gmail.com: sucsess</p>\n</div>"}
+[ActiveJob] [MessageBroadcastJob] [9f634e80-b6cd-40b3-bc2c-5db7fcffb390] Performed MessageBroadcastJob (Job ID: 9f634e80-b6cd-40b3-bc2c-5db7fcffb390) from Async(default) in 22.95ms
+Started GET "/rooms/1" for ::1 at 2019-05-17 21:03:54 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/rooms_controller.rb:14
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 1[0m
+  ↳ app/views/rooms/show.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  Rendered collection of messages/_message.html.erb [4 times] (5.1ms)
+  Rendered rooms/show.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 61ms (Views: 53.7ms | ActiveRecord: 1.4ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-17 21:03:54 +0900
+RoomChannel stopped streaming from room_channel_
+RoomChannel stopped streaming from room_channel_1
+Started GET "/cable" for ::1 at 2019-05-17 21:03:54 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 21:03:54 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_1
+Started GET "/rooms/1" for ::1 at 2019-05-17 21:03:57 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/rooms_controller.rb:14
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 1[0m
+  ↳ app/views/rooms/show.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  Rendered collection of messages/_message.html.erb [4 times] (7.4ms)
+  Rendered rooms/show.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 42ms (Views: 36.3ms | ActiveRecord: 1.5ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-17 21:03:57 +0900
+RoomChannel stopped streaming from room_channel_1
+Started GET "/cable" for ::1 at 2019-05-17 21:03:57 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 21:03:57 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_1
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-17 21:04:05 +0900
+RoomChannel stopped streaming from room_channel_1
+RoomChannel#speak({"message"=>"ooo"})
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[36mMessage Create (1.6ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `created_at`, `updated_at`, `user_id`, `room_id`) VALUES ('ooo', '2019-05-17 12:05:18', '2019-05-17 12:05:18', 1, 1)[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/channels/room_channel.rb:12
+[ActiveJob] Enqueued MessageBroadcastJob (Job ID: aa115bcd-9b8b-47ea-b892-96a5ef026562) to Async(default) with arguments: #<GlobalID:0x00007fb3a5590d20 @uri=#<URI::GID gid://chat/Message/9>>
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 9 LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [MessageBroadcastJob] [aa115bcd-9b8b-47ea-b892-96a5ef026562] Performing MessageBroadcastJob (Job ID: aa115bcd-9b8b-47ea-b892-96a5ef026562) from Async(default) with arguments: #<GlobalID:0x00007fb3a556ae90 @uri=#<URI::GID gid://chat/Message/9>>
+[ActiveJob] [MessageBroadcastJob] [aa115bcd-9b8b-47ea-b892-96a5ef026562]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [aa115bcd-9b8b-47ea-b892-96a5ef026562]   ↳ app/views/messages/_message.html.erb:2
+[ActiveJob] [MessageBroadcastJob] [aa115bcd-9b8b-47ea-b892-96a5ef026562]   Rendered messages/_message.html.erb (2.3ms)
+[ActiveJob] [MessageBroadcastJob] [aa115bcd-9b8b-47ea-b892-96a5ef026562] [ActionCable] Broadcasting to room_channel: {:message=>"<div class=\"message\">\n  <p>test@gmail.com: ooo</p>\n</div>"}
+[ActiveJob] [MessageBroadcastJob] [aa115bcd-9b8b-47ea-b892-96a5ef026562] Performed MessageBroadcastJob (Job ID: aa115bcd-9b8b-47ea-b892-96a5ef026562) from Async(default) in 22.8ms
+Started GET "/rooms/1" for ::1 at 2019-05-17 21:05:41 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/rooms_controller.rb:14
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.9ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 1[0m
+  ↳ app/views/rooms/show.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  Rendered collection of messages/_message.html.erb [5 times] (5.0ms)
+  Rendered rooms/show.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 347ms (Views: 341.1ms | ActiveRecord: 1.9ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-17 21:05:41 +0900
+RoomChannel stopped streaming from room_channel_1
+Started GET "/cable" for ::1 at 2019-05-17 21:05:41 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 21:05:41 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_1
+RoomChannel#speak({"message"=>"se"})
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `created_at`, `updated_at`, `user_id`, `room_id`) VALUES ('se', '2019-05-17 12:05:44', '2019-05-17 12:05:44', 1, 1)[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/channels/room_channel.rb:12
+[ActiveJob] Enqueued MessageBroadcastJob (Job ID: 6b8760db-4723-45e0-8933-6d034fca9f9b) to Async(default) with arguments: #<GlobalID:0x00007fb3ae8412a0 @uri=#<URI::GID gid://chat/Message/10>>
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 10 LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [MessageBroadcastJob] [6b8760db-4723-45e0-8933-6d034fca9f9b] Performing MessageBroadcastJob (Job ID: 6b8760db-4723-45e0-8933-6d034fca9f9b) from Async(default) with arguments: #<GlobalID:0x00007fb3abc44800 @uri=#<URI::GID gid://chat/Message/10>>
+[ActiveJob] [MessageBroadcastJob] [6b8760db-4723-45e0-8933-6d034fca9f9b]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [6b8760db-4723-45e0-8933-6d034fca9f9b]   ↳ app/views/messages/_message.html.erb:2
+[ActiveJob] [MessageBroadcastJob] [6b8760db-4723-45e0-8933-6d034fca9f9b]   Rendered messages/_message.html.erb (1.8ms)
+[ActiveJob] [MessageBroadcastJob] [6b8760db-4723-45e0-8933-6d034fca9f9b] [ActionCable] Broadcasting to room_channel: {:message=>"<div class=\"message\">\n  <p>test@gmail.com: se</p>\n</div>"}
+[ActiveJob] [MessageBroadcastJob] [6b8760db-4723-45e0-8933-6d034fca9f9b] Performed MessageBroadcastJob (Job ID: 6b8760db-4723-45e0-8933-6d034fca9f9b) from Async(default) in 21.66ms
+Started GET "/rooms/1" for ::1 at 2019-05-17 21:05:45 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/rooms_controller.rb:14
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 1[0m
+  ↳ app/views/rooms/show.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  Rendered collection of messages/_message.html.erb [6 times] (5.6ms)
+  Rendered rooms/show.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 39ms (Views: 33.7ms | ActiveRecord: 1.2ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-17 21:05:45 +0900
+RoomChannel stopped streaming from room_channel_1
+Started GET "/cable" for ::1 at 2019-05-17 21:05:45 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 21:05:45 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_1
+Started GET "/rooms/1" for ::1 at 2019-05-17 21:09:43 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/rooms_controller.rb:14
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 1[0m
+  ↳ app/views/rooms/show.html.erb:2
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  Rendered collection of messages/_message.html.erb [6 times] (4.8ms)
+  Rendered rooms/show.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 424ms (Views: 414.6ms | ActiveRecord: 2.0ms)
+
+
+RoomChannel#speak({"message"=>"dou"})
+RoomChannel#speak({"message"=>""})
+RoomChannel#speak({"message"=>""})
+RoomChannel#speak({"message"=>""})
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[36mMessage Create (0.4ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `created_at`, `updated_at`, `user_id`, `room_id`) VALUES ('dou', '2019-05-17 12:09:50', '2019-05-17 12:09:50', 1, 1)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ app/channels/room_channel.rb:12
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  ↳ app/channels/room_channel.rb:12
+[ActiveJob] Enqueued MessageBroadcastJob (Job ID: 655c7e7f-a6ca-4dac-8ea0-e78204f35890) to Async(default) with arguments: #<GlobalID:0x00007fb3a7875390 @uri=#<URI::GID gid://chat/Message/11>>
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\",\"room_id\":1}", "data"=>"{\"message\":\"\",\"action\":\"speak\"}"}) [ActiveRecord::RecordInvalid - Validation failed: Content can't be blank]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:80:in `raise_validation_error' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:52:in `save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:315:in `block in save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:387:in `block in with_transaction_returning_status' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `block in transaction'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  ↳ app/channels/room_channel.rb:12
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\",\"room_id\":1}", "data"=>"{\"message\":\"\",\"action\":\"speak\"}"}) [ActiveRecord::RecordInvalid - Validation failed: Content can't be blank]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:80:in `raise_validation_error' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:52:in `save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:315:in `block in save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:387:in `block in with_transaction_returning_status' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `block in transaction'
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/channels/room_channel.rb:12
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\",\"room_id\":1}", "data"=>"{\"message\":\"\",\"action\":\"speak\"}"}) [ActiveRecord::RecordInvalid - Validation failed: Content can't be blank]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:80:in `raise_validation_error' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:52:in `save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:315:in `block in save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:387:in `block in with_transaction_returning_status' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `block in transaction'
+  [1m[36mMessage Load (1.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 11 LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [MessageBroadcastJob] [655c7e7f-a6ca-4dac-8ea0-e78204f35890] Performing MessageBroadcastJob (Job ID: 655c7e7f-a6ca-4dac-8ea0-e78204f35890) from Async(default) with arguments: #<GlobalID:0x00007fb3a95f7878 @uri=#<URI::GID gid://chat/Message/11>>
+[ActiveJob] [MessageBroadcastJob] [655c7e7f-a6ca-4dac-8ea0-e78204f35890]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [655c7e7f-a6ca-4dac-8ea0-e78204f35890]   ↳ app/views/messages/_message.html.erb:2
+[ActiveJob] [MessageBroadcastJob] [655c7e7f-a6ca-4dac-8ea0-e78204f35890]   Rendered messages/_message.html.erb (1.9ms)
+[ActiveJob] [MessageBroadcastJob] [655c7e7f-a6ca-4dac-8ea0-e78204f35890] [ActionCable] Broadcasting to room_channel: {:message=>"<div class=\"message\">\n  <p>test@gmail.com: dou</p>\n</div>"}
+[ActiveJob] [MessageBroadcastJob] [655c7e7f-a6ca-4dac-8ea0-e78204f35890] Performed MessageBroadcastJob (Job ID: 655c7e7f-a6ca-4dac-8ea0-e78204f35890) from Async(default) in 23.15ms
+RoomChannel#speak({"message"=>"rwa"})
+RoomChannel#speak({"message"=>""})
+RoomChannel#speak({"message"=>""})
+RoomChannel#speak({"message"=>""})
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  ↳ app/channels/room_channel.rb:12
+  ↳ app/channels/room_channel.rb:12
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\",\"room_id\":1}", "data"=>"{\"message\":\"\",\"action\":\"speak\"}"}) [ActiveRecord::RecordInvalid - Validation failed: Content can't be blank]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:80:in `raise_validation_error' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:52:in `save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:315:in `block in save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:387:in `block in with_transaction_returning_status' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `block in transaction'
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\",\"room_id\":1}", "data"=>"{\"message\":\"\",\"action\":\"speak\"}"}) [ActiveRecord::RecordInvalid - Validation failed: Content can't be blank]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:80:in `raise_validation_error' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:52:in `save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:315:in `block in save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:387:in `block in with_transaction_returning_status' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `block in transaction'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/channels/room_channel.rb:12
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\",\"room_id\":1}", "data"=>"{\"message\":\"\",\"action\":\"speak\"}"}) [ActiveRecord::RecordInvalid - Validation failed: Content can't be blank]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:80:in `raise_validation_error' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:52:in `save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:315:in `block in save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:387:in `block in with_transaction_returning_status' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `block in transaction'
+  [1m[36mMessage Create (1.0ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `created_at`, `updated_at`, `user_id`, `room_id`) VALUES ('rwa', '2019-05-17 12:14:00', '2019-05-17 12:14:00', 1, 1)[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/channels/room_channel.rb:12
+[ActiveJob] Enqueued MessageBroadcastJob (Job ID: 09d9f782-1a1c-401b-83fd-8b1158867295) to Async(default) with arguments: #<GlobalID:0x00007fb3a573aea0 @uri=#<URI::GID gid://chat/Message/12>>
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 12 LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [MessageBroadcastJob] [09d9f782-1a1c-401b-83fd-8b1158867295] Performing MessageBroadcastJob (Job ID: 09d9f782-1a1c-401b-83fd-8b1158867295) from Async(default) with arguments: #<GlobalID:0x00007fb3a45e43e0 @uri=#<URI::GID gid://chat/Message/12>>
+[ActiveJob] [MessageBroadcastJob] [09d9f782-1a1c-401b-83fd-8b1158867295]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [09d9f782-1a1c-401b-83fd-8b1158867295]   ↳ app/views/messages/_message.html.erb:2
+[ActiveJob] [MessageBroadcastJob] [09d9f782-1a1c-401b-83fd-8b1158867295]   Rendered messages/_message.html.erb (2.4ms)
+[ActiveJob] [MessageBroadcastJob] [09d9f782-1a1c-401b-83fd-8b1158867295] [ActionCable] Broadcasting to room_channel: {:message=>"<div class=\"message\">\n  <p>test@gmail.com: rwa</p>\n</div>"}
+[ActiveJob] [MessageBroadcastJob] [09d9f782-1a1c-401b-83fd-8b1158867295] Performed MessageBroadcastJob (Job ID: 09d9f782-1a1c-401b-83fd-8b1158867295) from Async(default) in 21.71ms
+Started GET "/rooms/1" for ::1 at 2019-05-17 21:14:07 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/rooms_controller.rb:14
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (5.7ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 1[0m
+  ↳ app/views/rooms/show.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  Rendered collection of messages/_message.html.erb [8 times] (7.3ms)
+  Rendered rooms/show.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 399ms (Views: 387.2ms | ActiveRecord: 6.7ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-17 21:14:07 +0900
+RoomChannel stopped streaming from room_channel_
+RoomChannel stopped streaming from room_channel_1
+Started GET "/cable" for ::1 at 2019-05-17 21:14:08 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 21:14:08 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_1
+RoomChannel#speak({"message"=>"test"})
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[36mMessage Create (2.3ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `created_at`, `updated_at`, `user_id`, `room_id`) VALUES ('test', '2019-05-17 12:14:11', '2019-05-17 12:14:11', 1, 1)[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/channels/room_channel.rb:12
+[ActiveJob] Enqueued MessageBroadcastJob (Job ID: ffd4922c-8163-47a6-b71f-9b62e6dd9435) to Async(default) with arguments: #<GlobalID:0x00007fb3ae85aea8 @uri=#<URI::GID gid://chat/Message/13>>
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 13 LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [MessageBroadcastJob] [ffd4922c-8163-47a6-b71f-9b62e6dd9435] Performing MessageBroadcastJob (Job ID: ffd4922c-8163-47a6-b71f-9b62e6dd9435) from Async(default) with arguments: #<GlobalID:0x00007fb3ad0a0c40 @uri=#<URI::GID gid://chat/Message/13>>
+[ActiveJob] [MessageBroadcastJob] [ffd4922c-8163-47a6-b71f-9b62e6dd9435]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [ffd4922c-8163-47a6-b71f-9b62e6dd9435]   ↳ app/views/messages/_message.html.erb:2
+[ActiveJob] [MessageBroadcastJob] [ffd4922c-8163-47a6-b71f-9b62e6dd9435]   Rendered messages/_message.html.erb (1.9ms)
+[ActiveJob] [MessageBroadcastJob] [ffd4922c-8163-47a6-b71f-9b62e6dd9435] [ActionCable] Broadcasting to room_channel: {:message=>"<div class=\"message\">\n  <p>test@gmail.com: test</p>\n</div>"}
+[ActiveJob] [MessageBroadcastJob] [ffd4922c-8163-47a6-b71f-9b62e6dd9435] Performed MessageBroadcastJob (Job ID: ffd4922c-8163-47a6-b71f-9b62e6dd9435) from Async(default) in 23.22ms
+Started GET "/rooms/1" for ::1 at 2019-05-17 21:14:23 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/rooms_controller.rb:14
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (3.1ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 1[0m
+  ↳ app/views/rooms/show.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  Rendered collection of messages/_message.html.erb [9 times] (8.8ms)
+  Rendered rooms/show.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 227ms (Views: 217.7ms | ActiveRecord: 4.4ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-17 21:14:23 +0900
+RoomChannel stopped streaming from room_channel_1
+Started GET "/cable" for ::1 at 2019-05-17 21:14:23 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 21:14:23 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_1
+RoomChannel#speak({"message"=>"sss"})
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[36mMessage Create (6.2ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `created_at`, `updated_at`, `user_id`, `room_id`) VALUES ('sss', '2019-05-17 12:14:27', '2019-05-17 12:14:27', 1, 1)[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/channels/room_channel.rb:12
+[ActiveJob] Enqueued MessageBroadcastJob (Job ID: ccb4b48b-7402-4463-90b0-cc72a97cf844) to Async(default) with arguments: #<GlobalID:0x00007fb3aaf65918 @uri=#<URI::GID gid://chat/Message/14>>
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 14 LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [MessageBroadcastJob] [ccb4b48b-7402-4463-90b0-cc72a97cf844] Performing MessageBroadcastJob (Job ID: ccb4b48b-7402-4463-90b0-cc72a97cf844) from Async(default) with arguments: #<GlobalID:0x00007fb3aba96fa8 @uri=#<URI::GID gid://chat/Message/14>>
+[ActiveJob] [MessageBroadcastJob] [ccb4b48b-7402-4463-90b0-cc72a97cf844]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [ccb4b48b-7402-4463-90b0-cc72a97cf844]   ↳ app/views/messages/_message.html.erb:2
+[ActiveJob] [MessageBroadcastJob] [ccb4b48b-7402-4463-90b0-cc72a97cf844]   Rendered messages/_message.html.erb (1.8ms)
+[ActiveJob] [MessageBroadcastJob] [ccb4b48b-7402-4463-90b0-cc72a97cf844] [ActionCable] Broadcasting to room_channel: {:message=>"<div class=\"message\">\n  <p>test@gmail.com: sss</p>\n</div>"}
+[ActiveJob] [MessageBroadcastJob] [ccb4b48b-7402-4463-90b0-cc72a97cf844] Performed MessageBroadcastJob (Job ID: ccb4b48b-7402-4463-90b0-cc72a97cf844) from Async(default) in 21.12ms
+Started GET "/rooms/1" for ::1 at 2019-05-17 21:16:00 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/rooms_controller.rb:14
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 1[0m
+  ↳ app/views/rooms/show.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  Rendered collection of messages/_message.html.erb [10 times] (33.2ms)
+  Rendered rooms/show.html.erb within layouts/application (38.4ms)
+Completed 200 OK in 500ms (Views: 493.8ms | ActiveRecord: 1.3ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-17 21:16:01 +0900
+RoomChannel stopped streaming from room_channel_1
+Started GET "/cable" for ::1 at 2019-05-17 21:16:01 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 21:16:01 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_1
+RoomChannel#speak({"message"=>"aaaa"})
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[36mMessage Create (0.9ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `created_at`, `updated_at`, `user_id`, `room_id`) VALUES ('aaaa', '2019-05-17 12:16:04', '2019-05-17 12:16:04', 1, 1)[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/channels/room_channel.rb:12
+[ActiveJob] Enqueued MessageBroadcastJob (Job ID: e29e65d6-6c34-48a5-93d9-c0aedb3264cc) to Async(default) with arguments: #<GlobalID:0x00007fb3aae94098 @uri=#<URI::GID gid://chat/Message/15>>
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 15 LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [MessageBroadcastJob] [e29e65d6-6c34-48a5-93d9-c0aedb3264cc] Performing MessageBroadcastJob (Job ID: e29e65d6-6c34-48a5-93d9-c0aedb3264cc) from Async(default) with arguments: #<GlobalID:0x00007fb3abb99658 @uri=#<URI::GID gid://chat/Message/15>>
+[ActiveJob] [MessageBroadcastJob] [e29e65d6-6c34-48a5-93d9-c0aedb3264cc]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [e29e65d6-6c34-48a5-93d9-c0aedb3264cc]   ↳ app/views/messages/_message.html.erb:2
+[ActiveJob] [MessageBroadcastJob] [e29e65d6-6c34-48a5-93d9-c0aedb3264cc]   Rendered messages/_message.html.erb (1.9ms)
+[ActiveJob] [MessageBroadcastJob] [e29e65d6-6c34-48a5-93d9-c0aedb3264cc] [ActionCable] Broadcasting to room_channel: {:message=>"<div class=\"message\">\n  <p>test@gmail.com: aaaa</p>\n</div>"}
+[ActiveJob] [MessageBroadcastJob] [e29e65d6-6c34-48a5-93d9-c0aedb3264cc] Performed MessageBroadcastJob (Job ID: e29e65d6-6c34-48a5-93d9-c0aedb3264cc) from Async(default) in 19.88ms
+Started GET "/rooms/1" for ::1 at 2019-05-17 21:18:09 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/rooms_controller.rb:14
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 1[0m
+  ↳ app/views/rooms/show.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  Rendered collection of messages/_message.html.erb [11 times] (7.8ms)
+  Rendered rooms/show.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 453ms (Views: 411.2ms | ActiveRecord: 18.6ms)
+
+
+Started GET "/cable" for ::1 at 2019-05-17 21:18:09 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 21:18:09 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_1
+RoomChannel#speak({"message"=>"dream boy"})
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[36mMessage Create (0.4ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `created_at`, `updated_at`, `user_id`, `room_id`) VALUES ('dream boy', '2019-05-17 12:18:14', '2019-05-17 12:18:14', 1, 1)[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/channels/room_channel.rb:12
+[ActiveJob] Enqueued MessageBroadcastJob (Job ID: 530df881-36e3-4fe2-bfb8-62ae3ed44d63) to Async(default) with arguments: #<GlobalID:0x00007fb3a5528c20 @uri=#<URI::GID gid://chat/Message/16>>
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 16 LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [MessageBroadcastJob] [530df881-36e3-4fe2-bfb8-62ae3ed44d63] Performing MessageBroadcastJob (Job ID: 530df881-36e3-4fe2-bfb8-62ae3ed44d63) from Async(default) with arguments: #<GlobalID:0x00007fb3a5500860 @uri=#<URI::GID gid://chat/Message/16>>
+[ActiveJob] [MessageBroadcastJob] [530df881-36e3-4fe2-bfb8-62ae3ed44d63]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [530df881-36e3-4fe2-bfb8-62ae3ed44d63]   ↳ app/views/messages/_message.html.erb:2
+[ActiveJob] [MessageBroadcastJob] [530df881-36e3-4fe2-bfb8-62ae3ed44d63]   Rendered messages/_message.html.erb (2.5ms)
+[ActiveJob] [MessageBroadcastJob] [530df881-36e3-4fe2-bfb8-62ae3ed44d63] [ActionCable] Broadcasting to room_channel: {:message=>"<div class=\"message\">\n  <p>test@gmail.com: dream boy</p>\n</div>"}
+[ActiveJob] [MessageBroadcastJob] [530df881-36e3-4fe2-bfb8-62ae3ed44d63] Performed MessageBroadcastJob (Job ID: 530df881-36e3-4fe2-bfb8-62ae3ed44d63) from Async(default) in 24.11ms
+Started GET "/cable" for ::1 at 2019-05-17 21:18:16 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 21:18:16 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_1
+Started GET "/cable" for ::1 at 2019-05-17 21:18:18 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 21:18:18 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_1
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_2
+Started GET "/rooms/1" for ::1 at 2019-05-17 21:21:04 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/rooms_controller.rb:14
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 1[0m
+  ↳ app/views/rooms/show.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  Rendered collection of messages/_message.html.erb [12 times] (7.4ms)
+  Rendered rooms/show.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 442ms (Views: 401.6ms | ActiveRecord: 20.5ms)
+
+
+Started GET "/cable" for ::1 at 2019-05-17 21:21:04 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 21:21:04 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_
+RoomChannel#speak({"message"=>"ooo"})
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[36mMessage Create (1.6ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `created_at`, `updated_at`, `user_id`) VALUES ('ooo', '2019-05-17 12:21:07', '2019-05-17 12:21:07', 1)[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/channels/room_channel.rb:12
+[ActiveJob] Enqueued MessageBroadcastJob (Job ID: 65373a01-b662-4ced-a115-3b5746ba53db) to Async(default) with arguments: #<GlobalID:0x00007fb3a96ca160 @uri=#<URI::GID gid://chat/Message/17>>
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 17 LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [MessageBroadcastJob] [65373a01-b662-4ced-a115-3b5746ba53db] Performing MessageBroadcastJob (Job ID: 65373a01-b662-4ced-a115-3b5746ba53db) from Async(default) with arguments: #<GlobalID:0x00007fb3a96c7ed8 @uri=#<URI::GID gid://chat/Message/17>>
+[ActiveJob] [MessageBroadcastJob] [65373a01-b662-4ced-a115-3b5746ba53db]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [65373a01-b662-4ced-a115-3b5746ba53db]   ↳ app/views/messages/_message.html.erb:2
+[ActiveJob] [MessageBroadcastJob] [65373a01-b662-4ced-a115-3b5746ba53db]   Rendered messages/_message.html.erb (2.7ms)
+[ActiveJob] [MessageBroadcastJob] [65373a01-b662-4ced-a115-3b5746ba53db] [ActionCable] Broadcasting to room_channel: {:message=>"<div class=\"message\">\n  <p>test@gmail.com: ooo</p>\n</div>"}
+[ActiveJob] [MessageBroadcastJob] [65373a01-b662-4ced-a115-3b5746ba53db] Performed MessageBroadcastJob (Job ID: 65373a01-b662-4ced-a115-3b5746ba53db) from Async(default) in 22.17ms
+Started GET "/cable" for ::1 at 2019-05-17 21:21:11 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 21:21:11 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_1
+Started GET "/cable" for ::1 at 2019-05-17 21:21:12 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 21:21:12 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_1
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_2
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-17 21:21:53 +0900
+RoomChannel stopped streaming from room_channel_1
+Started GET "/rooms/1" for ::1 at 2019-05-17 21:22:01 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/rooms_controller.rb:14
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 1[0m
+  ↳ app/views/rooms/show.html.erb:2
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  Rendered collection of messages/_message.html.erb [12 times] (41.4ms)
+  Rendered rooms/show.html.erb within layouts/application (49.1ms)
+Completed 200 OK in 93ms (Views: 82.7ms | ActiveRecord: 3.8ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-17 21:22:01 +0900
+RoomChannel stopped streaming from room_channel_
+Started GET "/cable" for ::1 at 2019-05-17 21:22:01 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 21:22:01 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_1
+RoomChannel#speak({"message"=>"www"})
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[36mMessage Create (4.0ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `created_at`, `updated_at`, `user_id`, `room_id`) VALUES ('www', '2019-05-17 12:22:04', '2019-05-17 12:22:04', 1, 1)[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/channels/room_channel.rb:12
+[ActiveJob] Enqueued MessageBroadcastJob (Job ID: 36afd4c4-f6af-44aa-be84-d82abf8dd9be) to Async(default) with arguments: #<GlobalID:0x00007fb3abafa030 @uri=#<URI::GID gid://chat/Message/18>>
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 18 LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [MessageBroadcastJob] [36afd4c4-f6af-44aa-be84-d82abf8dd9be] Performing MessageBroadcastJob (Job ID: 36afd4c4-f6af-44aa-be84-d82abf8dd9be) from Async(default) with arguments: #<GlobalID:0x00007fb3abadabb8 @uri=#<URI::GID gid://chat/Message/18>>
+[ActiveJob] [MessageBroadcastJob] [36afd4c4-f6af-44aa-be84-d82abf8dd9be]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [36afd4c4-f6af-44aa-be84-d82abf8dd9be]   ↳ app/views/messages/_message.html.erb:2
+[ActiveJob] [MessageBroadcastJob] [36afd4c4-f6af-44aa-be84-d82abf8dd9be]   Rendered messages/_message.html.erb (1.7ms)
+[ActiveJob] [MessageBroadcastJob] [36afd4c4-f6af-44aa-be84-d82abf8dd9be] [ActionCable] Broadcasting to room_channel: {:message=>"<div class=\"message\">\n  <p>test@gmail.com: www</p>\n</div>"}
+[ActiveJob] [MessageBroadcastJob] [36afd4c4-f6af-44aa-be84-d82abf8dd9be] Performed MessageBroadcastJob (Job ID: 36afd4c4-f6af-44aa-be84-d82abf8dd9be) from Async(default) in 21.19ms
+RoomChannel#speak
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/channels/room_channel.rb:12
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\",\"room_id\":1}", "data"=>"{\"action\":\"speak\"}"}) [ActiveRecord::RecordInvalid - Validation failed: Content can't be blank]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:80:in `raise_validation_error' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:52:in `save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:315:in `block in save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:387:in `block in with_transaction_returning_status' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `block in transaction'
+Started GET "/" for ::1 at 2019-05-17 21:30:50 +0900
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` ORDER BY `rooms`.`id` ASC[0m
+  ↳ app/views/rooms/index.html.erb:4
+  Rendered rooms/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 385ms (Views: 328.6ms | ActiveRecord: 23.6ms)
+
+
+Started GET "/cable" for ::1 at 2019-05-17 21:30:51 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 21:30:51 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_
+Started GET "/rooms/1" for ::1 at 2019-05-17 21:30:53 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoom Load (0.7ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/rooms_controller.rb:14
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 1[0m
+  ↳ app/views/rooms/show.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:2
+  Rendered collection of messages/_message.html.erb [13 times] (9.9ms)
+  Rendered rooms/show.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 60ms (Views: 44.2ms | ActiveRecord: 5.6ms)
+
+
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_1
+RoomChannel#speak({"message"=>"tanomu"})
+RoomChannel#speak({"message"=>""})
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mMessage Create (1.5ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `created_at`, `updated_at`, `user_id`, `room_id`) VALUES ('tanomu', '2019-05-17 12:30:55', '2019-05-17 12:30:55', 1, 1)[0m
+  ↳ app/channels/room_channel.rb:12
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/channels/room_channel.rb:12
+  ↳ app/channels/room_channel.rb:12
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\",\"room_id\":1}", "data"=>"{\"message\":\"\",\"action\":\"speak\"}"}) [ActiveRecord::RecordInvalid - Validation failed: Content can't be blank]: /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:80:in `raise_validation_error' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/validations.rb:52:in `save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:315:in `block in save!' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb:387:in `block in with_transaction_returning_status' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `block in transaction'
+[ActiveJob] Enqueued MessageBroadcastJob (Job ID: 90585cbb-9800-4c15-add6-feaab0de4c6a) to Async(default) with arguments: #<GlobalID:0x00007fb3a9343d70 @uri=#<URI::GID gid://chat/Message/19>>
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 19 LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [MessageBroadcastJob] [90585cbb-9800-4c15-add6-feaab0de4c6a] Performing MessageBroadcastJob (Job ID: 90585cbb-9800-4c15-add6-feaab0de4c6a) from Async(default) with arguments: #<GlobalID:0x00007fb3a9320e60 @uri=#<URI::GID gid://chat/Message/19>>
+[ActiveJob] [MessageBroadcastJob] [90585cbb-9800-4c15-add6-feaab0de4c6a]   [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [90585cbb-9800-4c15-add6-feaab0de4c6a]   ↳ app/views/messages/_message.html.erb:2
+[ActiveJob] [MessageBroadcastJob] [90585cbb-9800-4c15-add6-feaab0de4c6a]   Rendered messages/_message.html.erb (3.4ms)
+[ActiveJob] [MessageBroadcastJob] [90585cbb-9800-4c15-add6-feaab0de4c6a] [ActionCable] Broadcasting to room_channel: {:message=>"<div class=\"message\">\n  <p>test@gmail.com: tanomu</p>\n</div>"}
+[ActiveJob] [MessageBroadcastJob] [90585cbb-9800-4c15-add6-feaab0de4c6a] Performed MessageBroadcastJob (Job ID: 90585cbb-9800-4c15-add6-feaab0de4c6a) from Async(default) in 21.52ms
+Started GET "/cable" for ::1 at 2019-05-17 21:30:58 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 21:30:58 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_1
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_2
+Started GET "/cable" for ::1 at 2019-05-17 21:30:59 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 21:30:59 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/channels/application_cable/connection.rb:14
+Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzE)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel_1
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-17 21:34:31 +0900
+RoomChannel stopped streaming from room_channel_1
