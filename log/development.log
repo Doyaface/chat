@@ -1,0 +1,726 @@
+  [1m[35m (2.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE DATABASE `chat_development` DEFAULT CHARACTER SET `utf8`[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE DATABASE `chat_test` DEFAULT CHARACTER SET `utf8`[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (108.4ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (25.9ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (6.4ms)[0m  [1m[34mSELECT GET_LOCK('8807287657078091370', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20190516135214)
+  [1m[35m (25.8ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190516135214_devise_create_users.rb:5
+  [1m[35m (63.5ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  ↳ db/migrate/20190516135214_devise_create_users.rb:39
+  [1m[35m (72.2ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) [0m
+  ↳ db/migrate/20190516135214_devise_create_users.rb:40
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (2.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190516135214')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (2.1ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2019-05-16 13:52:40', '2019-05-16 13:52:40')[0m
+  ↳ bin/rails:9
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT RELEASE_LOCK('8807287657078091370')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Started GET "/users/sign_in" for ::1 at 2019-05-16 22:52:55 +0900
+  [1m[35m (4.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (33.7ms)
+Completed 200 OK in 372ms (Views: 344.8ms | ActiveRecord: 7.6ms)
+
+
+  [1m[35m (1.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Started GET "/" for ::1 at 2019-05-16 23:01:53 +0900
+  [1m[35m (4.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/rooms/show" for ::1 at 2019-05-16 23:01:56 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('8807287657078091370', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateMessages (20190516135328)
+  [1m[35m (109.5ms)[0m  [1m[35mCREATE TABLE `messages` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `content` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190516135328_create_messages.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (1.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190516135328')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('8807287657078091370')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Started GET "/rooms/show" for ::1 at 2019-05-16 23:02:36 +0900
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RoomsController#show as HTML
+Completed 401 Unauthorized in 15ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-16 23:02:36 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 609ms (Views: 595.7ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-05-16 23:02:48 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ecCbnpuH7d0+QMv5QHyfxIPmz7+Mtm7tV6Ias+b9vb7aa1iBNLzFQKH4QLzX2TJPCp+jX9ZJBgp+/CLuptHqzg==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'test@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.3ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ecCbnpuH7d0+QMv5QHyfxIPmz7+Mtm7tV6Ias+b9vb7aa1iBNLzFQKH4QLzX2TJPCp+jX9ZJBgp+/CLuptHqzg==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  Rendering /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 152ms (Views: 29.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-05-16 23:02:49 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 40ms (Views: 38.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-05-16 23:03:03 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4vUTBUHK490i6sT0YBjvKRSBApcv2Dg2D6yNwAnKkWzpfhLQSf8Wrv7pju5SeUUOjizdc5qITkfnuc/TAmz0Q==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (5.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'test@gmail.com' LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('test@gmail.com', '$2a$11$dQXWEOosyo10GuxQ3dQNe.EzQi30ihBRQQuWLPGDQ/E9Fuxsxl7j2', '2019-05-16 14:03:03', '2019-05-16 14:03:03')[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/rooms/show
+Completed 302 Found in 164ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/rooms/show" for ::1 at 2019-05-16 23:03:03 +0900
+Processing by RoomsController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages`[0m
+  ↳ app/views/rooms/show.html.erb:3
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered rooms/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 30ms (Views: 18.2ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/rooms/show" for ::1 at 2019-05-16 23:03:05 +0900
+Processing by RoomsController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages`[0m
+  ↳ app/views/rooms/show.html.erb:3
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered rooms/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 24ms (Views: 19.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/rooms/show" for ::1 at 2019-05-16 23:03:13 +0900
+Processing by RoomsController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT `messages`.* FROM `messages`[0m
+  ↳ app/views/rooms/show.html.erb:3
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered rooms/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 24ms (Views: 20.2ms | ActiveRecord: 0.6ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (3.2ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `created_at`, `updated_at`) VALUES ('Hello', '2019-05-16 14:03:51', '2019-05-16 14:03:51')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/rooms/show" for ::1 at 2019-05-16 23:04:04 +0900
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RoomsController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages`[0m
+  ↳ app/views/rooms/show.html.erb:3
+  Rendered collection of messages/_message.html.erb [1 times] (0.4ms)
+  Rendered rooms/show.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 262ms (Views: 223.5ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/rooms/show" for ::1 at 2019-05-16 23:07:44 +0900
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RoomsController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT `messages`.* FROM `messages`[0m
+  ↳ app/views/rooms/show.html.erb:3
+  Rendered collection of messages/_message.html.erb [1 times] (0.3ms)
+  Rendered rooms/show.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 650ms (Views: 611.9ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/cable" for ::1 at 2019-05-16 23:07:45 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-16 23:07:45 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel#speak
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-16 23:20:11 +0900
+Started GET "/cable" for ::1 at 2019-05-16 23:20:12 +0900
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-16 23:20:12 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+Started GET "/rooms/show" for ::1 at 2019-05-16 23:23:55 +0900
+Processing by RoomsController#show as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages`[0m
+  ↳ app/views/rooms/show.html.erb:3
+  Rendered collection of messages/_message.html.erb [1 times] (0.6ms)
+  Rendered rooms/show.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 428ms (Views: 383.0ms | ActiveRecord: 13.8ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-16 23:23:55 +0900
+RoomChannel stopped streaming from room_channel
+Started GET "/cable" for ::1 at 2019-05-16 23:23:55 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-16 23:23:55 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+RoomChannel#speak({"message"=>"test"})
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\"}", "data"=>"{\"message\":\"test\",\"action\":\"speak\"}"}) [NoMethodError - undefined method `server' for ApplicationCable:Module]: /Users/takahiro/projects/chat/app/channels/room_channel.rb:11:in `speak' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:268:in `public_send' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:268:in `dispatch_action' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:168:in `block in perform_action' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:170:in `instrument'
+Started GET "/rooms/show" for ::1 at 2019-05-16 23:25:25 +0900
+Processing by RoomsController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages`[0m
+  ↳ app/views/rooms/show.html.erb:3
+  Rendered collection of messages/_message.html.erb [1 times] (0.5ms)
+  Rendered rooms/show.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 106ms (Views: 36.8ms | ActiveRecord: 53.5ms)
+
+
+Started GET "/cable" for ::1 at 2019-05-16 23:25:25 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-16 23:25:25 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+RoomChannel#speak({"message"=>"test"})
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\"}", "data"=>"{\"message\":\"test\",\"action\":\"speak\"}"}) [NameError - undefined local variable or method `data' for #<RoomChannel:0x00007f80877affa8>]: /Users/takahiro/projects/chat/app/channels/room_channel.rb:11:in `speak' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:268:in `public_send' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:268:in `dispatch_action' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:168:in `block in perform_action' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:170:in `instrument'
+RoomChannel#speak({"message"=>"test"})
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\"}", "data"=>"{\"message\":\"test\",\"action\":\"speak\"}"}) [NameError - undefined local variable or method `data' for #<RoomChannel:0x00007f80877affa8>]: /Users/takahiro/projects/chat/app/channels/room_channel.rb:11:in `speak' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:268:in `public_send' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:268:in `dispatch_action' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:168:in `block in perform_action' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:170:in `instrument'
+Started GET "/rooms/show" for ::1 at 2019-05-16 23:25:50 +0900
+Processing by RoomsController#show as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages`[0m
+  ↳ app/views/rooms/show.html.erb:3
+  Rendered collection of messages/_message.html.erb [1 times] (0.3ms)
+  Rendered rooms/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 28ms (Views: 23.2ms | ActiveRecord: 1.9ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-16 23:25:50 +0900
+RoomChannel stopped streaming from room_channel
+Started GET "/cable" for ::1 at 2019-05-16 23:25:50 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-16 23:25:50 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+RoomChannel#speak({"message"=>"test"})
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\"}", "data"=>"{\"message\":\"test\",\"action\":\"speak\"}"}) [NameError - undefined local variable or method `data' for #<RoomChannel:0x00007f80898536b0>]: /Users/takahiro/projects/chat/app/channels/room_channel.rb:11:in `speak' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:268:in `public_send' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:268:in `dispatch_action' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:168:in `block in perform_action' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:170:in `instrument'
+Started GET "/cable" for ::1 at 2019-05-16 23:27:32 +0900
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-16 23:27:32 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+Started GET "/rooms/show" for ::1 at 2019-05-16 23:27:37 +0900
+Processing by RoomsController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT `messages`.* FROM `messages`[0m
+  ↳ app/views/rooms/show.html.erb:3
+  Rendered collection of messages/_message.html.erb [1 times] (0.4ms)
+  Rendered rooms/show.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 349ms (Views: 305.5ms | ActiveRecord: 16.9ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-16 23:27:37 +0900
+RoomChannel stopped streaming from room_channel
+Started GET "/cable" for ::1 at 2019-05-16 23:27:37 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-16 23:27:37 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+RoomChannel#speak({"message"=>"test"})
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\"}", "data"=>"{\"message\":\"test\",\"action\":\"speak\"}"}) [NameError - undefined local variable or method `data' for #<RoomChannel:0x00007fcb18096fd8>]: /Users/takahiro/projects/chat/app/channels/room_channel.rb:11:in `speak' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:268:in `public_send' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:268:in `dispatch_action' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:168:in `block in perform_action' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:170:in `instrument'
+Started GET "/rooms/show" for ::1 at 2019-05-16 23:29:34 +0900
+Processing by RoomsController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages`[0m
+  ↳ app/views/rooms/show.html.erb:3
+  Rendered collection of messages/_message.html.erb [1 times] (0.7ms)
+  Rendered rooms/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 153ms (Views: 149.1ms | ActiveRecord: 0.6ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-16 23:29:34 +0900
+RoomChannel stopped streaming from room_channel
+Started GET "/cable" for ::1 at 2019-05-16 23:29:34 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-16 23:29:34 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+RoomChannel#speak({"message"=>"test"})
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\"}", "data"=>"{\"message\":\"test\",\"action\":\"speak\"}"}) [NameError - undefined local variable or method `data' for #<RoomChannel:0x00007fcb17dc4558>]: /Users/takahiro/projects/chat/app/channels/room_channel.rb:11:in `speak' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:268:in `public_send' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:268:in `dispatch_action' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:168:in `block in perform_action' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:170:in `instrument'
+Started GET "/cable" for ::1 at 2019-05-16 23:30:07 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-16 23:30:08 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+Started GET "/rooms/show" for ::1 at 2019-05-16 23:30:15 +0900
+Processing by RoomsController#show as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages`[0m
+  ↳ app/views/rooms/show.html.erb:3
+  Rendered collection of messages/_message.html.erb [1 times] (0.4ms)
+  Rendered rooms/show.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 355ms (Views: 305.7ms | ActiveRecord: 19.7ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-16 23:30:16 +0900
+RoomChannel stopped streaming from room_channel
+Started GET "/cable" for ::1 at 2019-05-16 23:30:16 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-16 23:30:16 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+RoomChannel#speak({"message"=>"test"})
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\"}", "data"=>"{\"message\":\"test\",\"action\":\"speak\"}"}) [NameError - undefined local variable or method `data' for #<RoomChannel:0x00007fb3ab85b748>]: /Users/takahiro/projects/chat/app/channels/room_channel.rb:11:in `speak' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:268:in `public_send' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:268:in `dispatch_action' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:168:in `block in perform_action' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:170:in `instrument'
+Started GET "/rooms/show" for ::1 at 2019-05-16 23:37:48 +0900
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RoomsController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages`[0m
+  ↳ app/views/rooms/show.html.erb:3
+  Rendered collection of messages/_message.html.erb [1 times] (0.3ms)
+  Rendered rooms/show.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 93ms (Views: 62.1ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/cable" for ::1 at 2019-05-16 23:37:49 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-16 23:37:49 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+Started GET "/rooms/show" for ::1 at 2019-05-16 23:41:41 +0900
+Processing by RoomsController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages`[0m
+  ↳ app/views/rooms/show.html.erb:3
+  Rendered collection of messages/_message.html.erb [1 times] (0.5ms)
+  Rendered rooms/show.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 462ms (Views: 452.2ms | ActiveRecord: 0.7ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-16 23:41:42 +0900
+RoomChannel stopped streaming from room_channel
+Started GET "/cable" for ::1 at 2019-05-16 23:41:42 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-16 23:41:42 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+RoomChannel#speak({"message"=>"test"})
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\"}", "data"=>"{\"message\":\"test\",\"action\":\"speak\"}"}) [NameError - undefined local variable or method `data' for #<RoomChannel:0x00007fb3aaba11d8>]: /Users/takahiro/projects/chat/app/channels/room_channel.rb:11:in `speak' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:268:in `public_send' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:268:in `dispatch_action' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:168:in `block in perform_action' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:170:in `instrument'
+Started GET "/rooms/show" for ::1 at 2019-05-16 23:45:34 +0900
+Processing by RoomsController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages`[0m
+  ↳ app/views/rooms/show.html.erb:3
+  Rendered collection of messages/_message.html.erb [1 times] (0.4ms)
+  Rendered rooms/show.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 89ms (Views: 54.5ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/cable" for ::1 at 2019-05-16 23:45:34 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-16 23:45:34 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+RoomChannel#speak({"message"=>"test"})
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"RoomChannel\"}", "data"=>"{\"message\":\"test\",\"action\":\"speak\"}"}) [NameError - undefined local variable or method `data' for #<RoomChannel:0x00007fb3ab908df8>]: /Users/takahiro/projects/chat/app/channels/room_channel.rb:11:in `speak' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:268:in `public_send' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:268:in `dispatch_action' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:168:in `block in perform_action' | /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:170:in `instrument'
+Started GET "/rooms/show" for ::1 at 2019-05-16 23:47:30 +0900
+Processing by RoomsController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages`[0m
+  ↳ app/views/rooms/show.html.erb:3
+  Rendered collection of messages/_message.html.erb [1 times] (0.4ms)
+  Rendered rooms/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 408ms (Views: 402.2ms | ActiveRecord: 0.7ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-16 23:47:30 +0900
+RoomChannel stopped streaming from room_channel
+Started GET "/cable" for ::1 at 2019-05-16 23:47:30 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-16 23:47:30 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+Started GET "/rooms/show" for ::1 at 2019-05-16 23:50:00 +0900
+Processing by RoomsController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages`[0m
+  ↳ app/views/rooms/show.html.erb:3
+  Rendered collection of messages/_message.html.erb [1 times] (0.4ms)
+  Rendered rooms/show.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 70ms (Views: 40.8ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/cable" for ::1 at 2019-05-16 23:50:00 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-16 23:50:00 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+RoomChannel#speak({"message"=>"test"})
+[ActionCable] Broadcasting to room_channel: {:message=>"test"}
+RoomChannel transmitting {"message"=>"test"} (via streamed from room_channel)
+Started GET "/rooms/show" for ::1 at 2019-05-17 18:49:53 +0900
+  [1m[35m (15.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RoomsController#show as HTML
+  [1m[36mUser Load (11.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (5.7ms)[0m  [1m[34mSELECT `messages`.* FROM `messages`[0m
+  ↳ app/views/rooms/show.html.erb:3
+  Rendered collection of messages/_message.html.erb [1 times] (4.2ms)
+  Rendered rooms/show.html.erb within layouts/application (158.8ms)
+Completed 200 OK in 940ms (Views: 874.3ms | ActiveRecord: 17.3ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-17 18:49:54 +0900
+RoomChannel stopped streaming from room_channel
+Started GET "/cable" for ::1 at 2019-05-17 18:49:54 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 18:49:54 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+RoomChannel#speak({"message"=>"tes"})
+[ActionCable] Broadcasting to room_channel: {:message=>"tes"}
+RoomChannel transmitting {"message"=>"tes"} (via streamed from room_channel)
+Started GET "/rooms/show" for ::1 at 2019-05-17 18:57:11 +0900
+  [1m[35m (30.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RoomsController#show as HTML
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT `messages`.* FROM `messages`[0m
+  ↳ app/views/rooms/show.html.erb:3
+  Rendered collection of messages/_message.html.erb [1 times] (1.1ms)
+  Rendered rooms/show.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 239ms (Views: 66.2ms | ActiveRecord: 112.0ms)
+
+
+Started GET "/cable" for ::1 at 2019-05-17 18:57:12 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 18:57:12 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+RoomChannel#speak({"message"=>"よいしょ"})
+  [1m[35m (4.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[36mMessage Create (75.3ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `created_at`, `updated_at`) VALUES ('よいしょ', '2019-05-17 09:57:16', '2019-05-17 09:57:16')[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/channels/room_channel.rb:12
+[ActiveJob] Enqueued MessageBroadcastJob (Job ID: b3b9bfde-8a35-44c3-9064-d566992ec507) to Async(default) with arguments: #<GlobalID:0x00007fb3a53ca770 @uri=#<URI::GID gid://chat/Message/2>>
+  [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 2 LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [MessageBroadcastJob] [b3b9bfde-8a35-44c3-9064-d566992ec507] Performing MessageBroadcastJob (Job ID: b3b9bfde-8a35-44c3-9064-d566992ec507) from Async(default) with arguments: #<GlobalID:0x00007fb3a5389d38 @uri=#<URI::GID gid://chat/Message/2>>
+[ActiveJob] [MessageBroadcastJob] [b3b9bfde-8a35-44c3-9064-d566992ec507] Error performing MessageBroadcastJob (Job ID: b3b9bfde-8a35-44c3-9064-d566992ec507) from Async(default) in 18.93ms: NoMethodError (undefined method `rendere' for ApplicationController:Class
+Did you mean?  renderer
+               render):
+/Users/takahiro/projects/chat/app/jobs/message_broadcast_job.rb:12:in `render_message'
+/Users/takahiro/projects/chat/app/jobs/message_broadcast_job.rb:5:in `perform'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/execution.rb:39:in `block in perform_now'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/i18n-1.6.0/lib/i18n.rb:297:in `with_locale'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/logging.rb:26:in `block (4 levels) in <module:Logging>'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:168:in `block in instrument'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:168:in `instrument'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/logging.rb:25:in `block (3 levels) in <module:Logging>'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/logging.rb:46:in `block in tag_logger'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:28:in `tagged'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `tagged'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/logging.rb:46:in `tag_logger'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/logging.rb:22:in `block (2 levels) in <module:Logging>'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/execution.rb:38:in `perform_now'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/execution.rb:24:in `block in execute'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/railtie.rb:28:in `block (4 levels) in <class:Railtie>'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/execution_wrapper.rb:87:in `wrap'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/reloader.rb:73:in `block in wrap'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/execution_wrapper.rb:87:in `wrap'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/reloader.rb:72:in `wrap'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/railtie.rb:27:in `block (3 levels) in <class:Railtie>'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/execution.rb:22:in `execute'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.3/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+/Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Started GET "/rooms/show" for ::1 at 2019-05-17 19:03:03 +0900
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RoomsController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages`[0m
+  ↳ app/views/rooms/show.html.erb:3
+  Rendered collection of messages/_message.html.erb [2 times] (1.5ms)
+  Rendered rooms/show.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 105ms (Views: 56.3ms | ActiveRecord: 27.0ms)
+
+
+Started GET "/cable" for ::1 at 2019-05-17 19:03:03 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 19:03:03 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+RoomChannel#speak({"message"=>"KEN THE 390"})
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[36mMessage Create (1.3ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `created_at`, `updated_at`) VALUES ('KEN THE 390', '2019-05-17 10:03:11', '2019-05-17 10:03:11')[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/channels/room_channel.rb:12
+[ActiveJob] Enqueued MessageBroadcastJob (Job ID: 0afac661-1ef1-40d3-8736-4f3cf823e773) to Async(default) with arguments: #<GlobalID:0x00007fb3aac5df40 @uri=#<URI::GID gid://chat/Message/3>>
+  [1m[35m (5.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 3 LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [MessageBroadcastJob] [0afac661-1ef1-40d3-8736-4f3cf823e773] Performing MessageBroadcastJob (Job ID: 0afac661-1ef1-40d3-8736-4f3cf823e773) from Async(default) with arguments: #<GlobalID:0x00007fb3aac472b8 @uri=#<URI::GID gid://chat/Message/3>>
+[ActiveJob] [MessageBroadcastJob] [0afac661-1ef1-40d3-8736-4f3cf823e773]   Rendered messages/_message.html.erb (1.1ms)
+[ActiveJob] [MessageBroadcastJob] [0afac661-1ef1-40d3-8736-4f3cf823e773] [ActionCable] Broadcasting to room_channel: {:message=>"<div class=\"messages\">\n  <p>KEN THE 390</p>\n</div>"}
+[ActiveJob] [MessageBroadcastJob] [0afac661-1ef1-40d3-8736-4f3cf823e773] Performed MessageBroadcastJob (Job ID: 0afac661-1ef1-40d3-8736-4f3cf823e773) from Async(default) in 23.83ms
+RoomChannel transmitting {"message"=>"<div class=\"messages\">\n  <p>KEN THE 390</p>\n</div>"} (via streamed from room_channel)
+Started GET "/rooms/show" for ::1 at 2019-05-17 19:04:33 +0900
+Processing by RoomsController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages`[0m
+  ↳ app/views/rooms/show.html.erb:3
+  Rendered collection of messages/_message.html.erb [3 times] (0.5ms)
+  Rendered rooms/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 460ms (Views: 451.7ms | ActiveRecord: 0.7ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2019-05-17 19:04:34 +0900
+RoomChannel stopped streaming from room_channel
+Started GET "/cable" for ::1 at 2019-05-17 19:04:34 +0900
+Started GET "/cable/" [WebSocket] for ::1 at 2019-05-17 19:04:34 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+RoomChannel#speak({"message"=>"moonlight"})
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[36mMessage Create (1.0ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `created_at`, `updated_at`) VALUES ('moonlight', '2019-05-17 10:04:42', '2019-05-17 10:04:42')[0m
+  ↳ app/channels/room_channel.rb:12
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/channels/room_channel.rb:12
+[ActiveJob] Enqueued MessageBroadcastJob (Job ID: 2dff1f9b-60af-467e-bd95-e301a0eaec7f) to Async(default) with arguments: #<GlobalID:0x00007fb3a5391150 @uri=#<URI::GID gid://chat/Message/4>>
+  [1m[36mMessage Load (1.2ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 4 LIMIT 1[0m
+  ↳ /Users/takahiro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [MessageBroadcastJob] [2dff1f9b-60af-467e-bd95-e301a0eaec7f] Performing MessageBroadcastJob (Job ID: 2dff1f9b-60af-467e-bd95-e301a0eaec7f) from Async(default) with arguments: #<GlobalID:0x00007fb3a5370f68 @uri=#<URI::GID gid://chat/Message/4>>
+[ActiveJob] [MessageBroadcastJob] [2dff1f9b-60af-467e-bd95-e301a0eaec7f]   Rendered messages/_message.html.erb (0.5ms)
+[ActiveJob] [MessageBroadcastJob] [2dff1f9b-60af-467e-bd95-e301a0eaec7f] [ActionCable] Broadcasting to room_channel: {:message=>"<div class=\"messages\">\n  <p>moonlight</p>\n</div>"}
+[ActiveJob] [MessageBroadcastJob] [2dff1f9b-60af-467e-bd95-e301a0eaec7f] Performed MessageBroadcastJob (Job ID: 2dff1f9b-60af-467e-bd95-e301a0eaec7f) from Async(default) in 23.51ms
+RoomChannel transmitting {"message"=>"<div class=\"messages\">\n  <p>moonlight</p>\n</div>"} (via streamed from room_channel)
